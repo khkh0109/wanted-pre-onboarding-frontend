@@ -21,7 +21,9 @@ function TodoItem({ id, todo, fetchTodos }) {
         <span>{todo}</span>
       </label>
       <div>
-        <button onClick={handleDeleteButton}>삭제</button>
+        <button data-testid="delete-button" onClick={handleDeleteButton}>
+          삭제
+        </button>
       </div>
     </li>
   );
