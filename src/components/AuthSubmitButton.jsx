@@ -1,4 +1,4 @@
-function SubmitButton({ name, email, password, onClick, testid }) {
+function AuthSubmitButton({ name, email, password, onClick, testid }) {
   return (
     <button
       type="submit"
@@ -11,4 +11,4 @@ function SubmitButton({ name, email, password, onClick, testid }) {
   );
 }
 
-export default SubmitButton;
+export default AuthSubmitButton;

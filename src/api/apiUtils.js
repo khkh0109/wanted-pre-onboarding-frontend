@@ -75,4 +75,16 @@ export const todoAPI = {
     const { data } = await tokenRequest.get("/todos");
     return data;
   },
+  postTodo: async todo => {
+    const data = await tokenRequest.post(
+      "/todos",
+      { todo },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return data;
+  },
 };

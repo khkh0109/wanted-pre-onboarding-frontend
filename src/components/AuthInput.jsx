@@ -1,4 +1,4 @@
-function Input({ label, type, id, testid, setValue }) {
+function AuthInput({ label, type, id, testid, setValue }) {
   return (
     <>
       <label htmlFor={id}>{label}</label>
@@ -15,4 +15,4 @@ function Input({ label, type, id, testid, setValue }) {
   );
 }
 
-export default Input;
+export default AuthInput;

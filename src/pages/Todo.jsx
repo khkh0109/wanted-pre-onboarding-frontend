@@ -2,21 +2,34 @@ import TodoItem from "../components/TodoItem";
 import { todoAPI } from "../api/apiUtils";
 import { useState, useEffect } from "react";
 
+import TodoForm from "../components/TodoForm";
+
 function Todo() {
   const [todoList, setTodoList] = useState([]);
-  useEffect(() => {
+
+  const fetchTodos = () => {
     todoAPI
       .getTodos()
       .then(res => {
         setTodoList(res);
-        console.log(res);
       })
       .catch(err => {
         console.log(err);
       });
+  };
+
+  useEffect(() => {
+    fetchTodos();
   }, []);
 
-  return todoList.map((todo, idx) => <TodoItem id={idx} todo={todo} />);
+  return (
+    <>
+      <TodoForm fetchTodos={fetchTodos} />
+      {todoList.map(todo => (
+        <TodoItem key={todo.id} id={todo.id} todo={todo.todo} />
+      ))}
+    </>
+  );
 }
 
 export default Todo;

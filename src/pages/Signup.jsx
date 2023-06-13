@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Input from "../components/Input";
-import SubmitButton from "../components/SubmitButton";
+import AuthInput from "../components/AuthInput";
+import AuthSubmitButton from "../components/AuthSubmitButton";
 
 import { authAPI } from "../api/apiUtils";
 
@@ -29,7 +29,7 @@ function Signup() {
 
   return (
     <form>
-      <Input
+      <AuthInput
         label="이메일"
         type="text"
         id="email"
@@ -37,7 +37,7 @@ function Signup() {
         setValue={setEmail}
       />
 
-      <Input
+      <AuthInput
         label="비밀번호"
         type="password"
         id="password"
@@ -45,7 +45,7 @@ function Signup() {
         setValue={setPassword}
       />
 
-      <SubmitButton
+      <AuthSubmitButton
         name="회원가입"
         email={email}
         password={password}
