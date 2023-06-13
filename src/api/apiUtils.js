@@ -69,3 +69,10 @@ export const authAPI = {
     return data;
   },
 };
+
+export const todoAPI = {
+  getTodos: async () => {
+    const { data } = await tokenRequest.get("/todos");
+    return data;
+  },
+};
