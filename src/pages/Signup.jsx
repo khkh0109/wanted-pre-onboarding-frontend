@@ -1,12 +1,31 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
 import Input from "../components/Input";
+import SubmitButton from "../components/SubmitButton";
+
+import { authAPI } from "../api/apiUtils";
 
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const navigate = useNavigate();
+
+  const signupRequest = e => {
+    e.preventDefault();
+    authAPI
+      .postSignup(email, password)
+      .then(() => {
+        alert("성공적으로 가입되었습니다.");
+        return navigate("/signin");
+      })
+      .catch(err => {
+        if (err.statusCode === 400) {
+          alert(err.message);
+        }
+      });
+  };
 
   return (
     <form>
@@ -26,37 +45,13 @@ function Signup() {
         setValue={setPassword}
       />
 
-      <button
-        type="submit"
-        data-testid="signup-button"
-        disabled={
-          email && email.includes("@") && password.length >= 8 ? false : true
-        }
-        onClick={e => {
-          e.preventDefault();
-          axios
-            .post(
-              `${process.env.REACT_APP_BASE_URL}/auth/signup`,
-              { email, password },
-              {
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              }
-            )
-            .then(() => {
-              alert("성공적으로 가입되었습니다.");
-              return navigate("/signin");
-            })
-            .catch(err => {
-              if (err.response.data.statusCode === 400) {
-                console.log(err.response.data.message);
-              }
-            });
-        }}
-      >
-        회원가입
-      </button>
+      <SubmitButton
+        name="회원가입"
+        email={email}
+        password={password}
+        testid="signup-button"
+        onClick={signupRequest}
+      />
     </form>
   );
 }
