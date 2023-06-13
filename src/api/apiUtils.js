@@ -36,7 +36,7 @@ tokenRequest.interceptors.response.use(
 
 export const authAPI = {
   postSignup: async (email, password) => {
-    const data = await nonTokenRequest.post(
+    const response = await nonTokenRequest.post(
       "/auth/signup",
       {
         email,
@@ -49,7 +49,7 @@ export const authAPI = {
       }
     );
 
-    return data;
+    return response;
   },
 
   postSignin: async (email, password) => {
@@ -86,5 +86,9 @@ export const todoAPI = {
       }
     );
     return data;
+  },
+  deleteTodo: async id => {
+    const response = await tokenRequest.delete(`/todos/${id}`);
+    return response;
   },
 };

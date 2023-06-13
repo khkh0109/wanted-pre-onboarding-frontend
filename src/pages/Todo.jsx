@@ -26,7 +26,12 @@ function Todo() {
     <>
       <TodoForm fetchTodos={fetchTodos} />
       {todoList.map(todo => (
-        <TodoItem key={todo.id} id={todo.id} todo={todo.todo} />
+        <TodoItem
+          key={todo.id}
+          id={todo.id}
+          todo={todo.todo}
+          fetchTodos={fetchTodos}
+        />
       ))}
     </>
   );
