@@ -1,7 +1,7 @@
 import { redirect } from "react-router-dom";
 
 export const redirectPage = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("access_token");
 
   if (token === null) {
     return redirect("/signin");
@@ -11,7 +11,7 @@ export const redirectPage = () => {
 };
 
 export const redirectSignin = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("access_token");
 
   if (token === null) {
     return redirect("/signin");
@@ -21,7 +21,7 @@ export const redirectSignin = () => {
 };
 
 export const redirectTodo = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("access_token");
 
   if (token) {
     return redirect("/todo");

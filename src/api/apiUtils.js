@@ -6,7 +6,7 @@ const tokenRequest = axios.create({ baseURL: BASE_URL });
 
 tokenRequest.interceptors.request.use(config => {
   config.headers = {
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
+    Authorization: `Bearer ${localStorage.getItem("access_token")}`,
   };
 
   return config;
@@ -38,6 +38,23 @@ export const authAPI = {
   postSignup: async (email, password) => {
     const data = await nonTokenRequest.post(
       "/auth/signup",
+      {
+        email,
+        password,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    return data;
+  },
+
+  postSignin: async (email, password) => {
+    const { data } = await nonTokenRequest.post(
+      "/auth/signin",
       {
         email,
         password,
