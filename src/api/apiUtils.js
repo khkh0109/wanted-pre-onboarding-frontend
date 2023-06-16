@@ -30,7 +30,7 @@ tokenRequest.interceptors.response.use(
     return response;
   },
   error => {
-    return Promise.reject(error.response.status); // * 수정
+    return Promise.reject(error.response.status);
   }
 );
 
@@ -75,6 +75,7 @@ export const todoAPI = {
     const { data } = await tokenRequest.get("/todos");
     return data;
   },
+
   postTodo: async todo => {
     const data = await tokenRequest.post(
       "/todos",
@@ -88,10 +89,12 @@ export const todoAPI = {
 
     return data;
   },
+
   deleteTodo: async id => {
     const response = await tokenRequest.delete(`/todos/${id}`);
     return response;
   },
+
   updateTodo: async (id, todo, isCompleted) => {
     const { data } = await tokenRequest.put(
       `/todos/${id}`,
