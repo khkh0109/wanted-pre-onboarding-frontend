@@ -85,10 +85,24 @@ export const todoAPI = {
         },
       }
     );
+
     return data;
   },
   deleteTodo: async id => {
     const response = await tokenRequest.delete(`/todos/${id}`);
     return response;
+  },
+  updateTodo: async (id, todo, isCompleted) => {
+    const { data } = await tokenRequest.put(
+      `/todos/${id}`,
+      { todo, isCompleted },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    return data;
   },
 };

@@ -8,13 +8,13 @@ function Todo() {
   const [todoList, setTodoList] = useState([]);
 
   const fetchTodos = () => {
-    todoAPI
+    return todoAPI
       .getTodos()
       .then(res => {
         setTodoList(res);
       })
       .catch(err => {
-        console.log(err);
+        console.error(err);
       });
   };
 
@@ -31,6 +31,8 @@ function Todo() {
           id={todo.id}
           todo={todo.todo}
           fetchTodos={fetchTodos}
+          isCompleted={todo.isCompleted}
+          setTodoList={setTodoList}
         />
       ))}
     </>

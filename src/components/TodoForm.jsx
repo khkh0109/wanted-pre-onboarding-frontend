@@ -6,8 +6,8 @@ import TodoButton from "./TodoButton";
 import { todoAPI } from "../api/apiUtils";
 
 function TodoForm({ fetchTodos }) {
-  const [value, setValue] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
+  const [value, setValue] = useState("");
 
   const createTodo = e => {
     e.preventDefault();

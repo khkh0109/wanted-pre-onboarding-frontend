@@ -46,7 +46,7 @@ function Signin() {
       />
 
       <AuthSubmitButton
-        name="회원가입"
+        name="로그인"
         email={email}
         password={password}
         testid="signin-button"
