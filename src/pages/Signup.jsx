@@ -57,7 +57,7 @@ function Signup() {
         />
       </form>
       <p>
-        이미 회원이신가요?
+        이미 회원이신가요?&nbsp;
         <Link to="/signin" className="font-semibold hover:underline">
           로그인
         </Link>
