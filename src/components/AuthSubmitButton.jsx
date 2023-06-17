@@ -5,6 +5,7 @@ function AuthSubmitButton({ name, email, password, onClick, testid }) {
       data-testid={testid}
       disabled={email.includes("@") && password.length >= 8 ? false : true}
       onClick={onClick}
+      className="btn btn-block btn-primary text-base"
     >
       {name}
     </button>

@@ -1,7 +1,9 @@
-function AuthInput({ label, type, id, testid, setValue }) {
+function AuthInput({ label, type, id, testid, setValue, placeholder }) {
   return (
-    <>
-      <label htmlFor={id}>{label}</label>
+    <div className="w-full mb-4">
+      <label htmlFor={id} className="block font-semibold mb-2">
+        {label}
+      </label>
       <input
         type={type}
         id={id}
@@ -10,8 +12,10 @@ function AuthInput({ label, type, id, testid, setValue }) {
         onChange={e => {
           setValue(e.target.value);
         }}
+        placeholder={placeholder}
+        className="grow input input-bordered input-primary w-full max-w-md"
       />
-    </>
+    </div>
   );
 }
 
