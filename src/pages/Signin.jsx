@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import AuthInput from "../components/AuthInput";
 import AuthSubmitButton from "../components/AuthSubmitButton";
@@ -28,8 +28,8 @@ function Signin() {
   };
 
   return (
-    <div className="container mx-auto h-screen flex justify-center items-center">
-      <form className="w-full flex flex-col justify-center items-center max-w-md">
+    <div className="container mx-auto h-screen flex flex-col justify-center items-center">
+      <form className="w-full flex flex-col justify-center items-center max-w-md mb-4">
         <AuthInput
           label="이메일"
           type="text"
@@ -56,6 +56,12 @@ function Signin() {
           onClick={signinRequest}
         />
       </form>
+      <p>
+        아직 회원이 아니신가요?{" "}
+        <Link to="/signup" className="font-semibold hover:underline">
+          회원가입
+        </Link>
+      </p>
     </div>
   );
 }
