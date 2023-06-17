@@ -28,31 +28,35 @@ function Signup() {
   };
 
   return (
-    <form>
-      <AuthInput
-        label="이메일"
-        type="text"
-        id="email"
-        testid="email-input"
-        setValue={setEmail}
-      />
+    <div className="container mx-auto h-screen flex justify-center items-center">
+      <form className="w-full flex flex-col justify-center items-center max-w-md">
+        <AuthInput
+          label="이메일"
+          type="text"
+          id="email"
+          testid="email-input"
+          setValue={setEmail}
+          placeholder="test@test.com"
+        />
 
-      <AuthInput
-        label="비밀번호"
-        type="password"
-        id="password"
-        testid="password-input"
-        setValue={setPassword}
-      />
+        <AuthInput
+          label="비밀번호"
+          type="password"
+          id="password"
+          testid="password-input"
+          setValue={setPassword}
+          placeholder="8자 이상 입력해 주세요."
+        />
 
-      <AuthSubmitButton
-        name="회원가입"
-        email={email}
-        password={password}
-        testid="signup-button"
-        onClick={signupRequest}
-      />
-    </form>
+        <AuthSubmitButton
+          name="회원가입"
+          email={email}
+          password={password}
+          testid="signup-button"
+          onClick={signupRequest}
+        />
+      </form>
+    </div>
   );
 }
 
