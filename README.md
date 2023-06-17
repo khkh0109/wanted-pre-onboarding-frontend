@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# 원티드 프리온보딩 프론트엔드 인턴십 - 선발 과제 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 이름: 태강희
+- 배포링크: https://wanted-pre-onboarding-frontend-khkh0109.vercel.app
 
-## Available Scripts
+<br/>
 
-In the project directory, you can run:
+### 설치 및 실행
+```zsh
+$ npm install
+$ npm start
+```
 
-### `npm start`
+<br/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 기술스택 
+- JavaScript
+- React
+- Axios
+- Tailwindcss
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br/>
 
-### `npm test`
+### 페이지 
+|**회원가입**|
+|:---:|
+|![회원가입](https://github.com/khkh0109/wanted-pre-onboarding-frontend/assets/77181642/9090b0a9-e1c4-457d-b0a7-a86391d2635d)|
+|**로그인**|
+|![로그인](https://github.com/khkh0109/wanted-pre-onboarding-frontend/assets/77181642/a660f18a-3ab6-4b79-a9af-fc134878769f)|
+|**투두리스트**|
+|![투두리스트](https://github.com/khkh0109/wanted-pre-onboarding-frontend/assets/77181642/642f4d00-d4ae-4e3b-9a80-49816b9cfde8)|
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 폴더구조 
+```
+.
+├── README.md
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon.ico
+│   └── index.html
+├── src
+│   ├── api
+│   ├── components
+│   ├── pages
+│   ├── util
+│   ├── index.css
+│   ├── index.js
+│   └── router.jsx
+└── tailwind.config.js
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 브랜치 
+|브랜치명|설명|
+|:---:|:---:|
+|`main`| 배포용 브랜치|
+|`feat`| 기능 개발용 브랜치|
 
-### `npm run eject`
+<br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 커밋 메시지 컨벤션 
+#### 구조 
+```
+타입: 제목 (필수) 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+본문 (옵션)
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### 예시 
+```
+feat: TODO 삭제 기능 추가 
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### 타입
+| 타입 | 설명 |
+| --- | --- |
+| feat | 새로운 기능을 추가할 경우 |
+| fix | 버그를 고친 경우 |
+| design | CSS 등 사용자 UI 디자인 변경 |
+| style | 코드 포맷 변경, 세미 콜론 누락, 코드 수정이 없는 경우 |
+| refactor | 프로덕션 코드 리팩토링 |
+| comment | 필요한 주석 추가 및 변경 |
+| docs | 문서를 수정한 경우 |
+| test | 테스트 추가, 테스트 리팩토링(프로덕션 코드 변경 X) |
+| chore | 빌드 테스트 업데이트, 패키지 매니저를 설정하는 경우(프로덕션 코드 변경 X) |
+| rename | 파일 혹은 폴더명을 수정하거나 옮기는 작업만인 경우 |
+| remove | 파일을 삭제하는 작업만 수행한 경우 |
