@@ -67,30 +67,40 @@ function TodoItem({ id, todo, fetchTodos, isCompleted, setTodoList }) {
   };
 
   return (
-    <li id={id}>
-      <input type="checkbox" checked={isCheckbox} onChange={handleCheckbox} />
-      {isModify ? (
-        <>
+    <li
+      id={id}
+      className="flex justify-between items-center py-4 border-b border-slate-100"
+    >
+      <div className="flex items-center gap-3">
+        <input
+          type="checkbox"
+          checked={isCheckbox}
+          onChange={handleCheckbox}
+          className="checkbox checkbox-primary"
+        />
+        {isModify ? (
           <input
             type="text"
             data-testid="modify-input"
             value={modifyValue}
             onChange={handleModifyInput}
             autoFocus
+            className="text-lg outline-0"
           />
-          <ModifyButtonGroup
-            handleSubmitButton={handleSubmitButton}
-            handleCancelButton={handleCancelButton}
-          />
-        </>
+        ) : (
+          <p className="text-lg">{todo}</p>
+        )}
+      </div>
+      {isModify ? (
+        <ModifyButtonGroup
+          handleSubmitButton={handleSubmitButton}
+          handleCancelButton={handleCancelButton}
+        />
       ) : (
-        <>
-          <p>{todo}</p>
-          <TodoItemButtonGroup
-            handleDeleteButton={handleDeleteButton}
-            handleModifyButton={handleModifyButton}
-          />
-        </>
+        <TodoItemButtonGroup
+          handleDeleteButton={handleDeleteButton}
+          handleModifyButton={handleModifyButton}
+        />
       )}
     </li>
   );

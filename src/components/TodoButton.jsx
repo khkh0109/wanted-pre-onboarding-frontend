@@ -5,6 +5,7 @@ function TodoButton({ onClick, isDisabled }) {
       data-testid="new-todo-add-button"
       onClick={onClick}
       disabled={isDisabled}
+      className="btn btn-primary text-base px-6"
     >
       추가
     </button>

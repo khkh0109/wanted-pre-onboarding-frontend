@@ -23,19 +23,21 @@ function Todo() {
   }, []);
 
   return (
-    <>
+    <div className="container mx-auto p-10 max-w-4xl">
       <TodoForm fetchTodos={fetchTodos} />
-      {todoList.map(todo => (
-        <TodoItem
-          key={todo.id}
-          id={todo.id}
-          todo={todo.todo}
-          fetchTodos={fetchTodos}
-          isCompleted={todo.isCompleted}
-          setTodoList={setTodoList}
-        />
-      ))}
-    </>
+      <ul>
+        {todoList.map(todo => (
+          <TodoItem
+            key={todo.id}
+            id={todo.id}
+            todo={todo.todo}
+            fetchTodos={fetchTodos}
+            isCompleted={todo.isCompleted}
+            setTodoList={setTodoList}
+          />
+        ))}
+      </ul>
+    </div>
   );
 }
 

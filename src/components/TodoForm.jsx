@@ -41,7 +41,7 @@ function TodoForm({ fetchTodos }) {
   };
 
   return (
-    <form>
+    <form className="flex gap-3">
       <TodoInput onChange={handleInput} value={value} />
       <TodoButton onClick={createTodo} isDisabled={isDisabled} />
     </form>
